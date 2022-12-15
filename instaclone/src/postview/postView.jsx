@@ -12,7 +12,9 @@ export default function PostView() {
     useEffect(() => {
         fetch('https://instaclonebackend-6rb0.onrender.com/getPost')
             .then((e) => (e.json()))
-            .then((ele) => (setState(ele)))
+            .then((ele) => {
+                ele.reverse();
+                setState(ele)})
             .catch((err) => console.log(err))
     }, [])
     return (
